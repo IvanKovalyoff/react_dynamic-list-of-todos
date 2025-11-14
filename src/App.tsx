@@ -102,7 +102,7 @@ export const App: React.FC = () => {
                     if (todo) {
                       openModal(todo);
                     } else {
-                      setSelectedTodo(null);
+                      closeModal();
                     }
                   }}
                 />

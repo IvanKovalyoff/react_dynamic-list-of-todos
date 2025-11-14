@@ -2,6 +2,7 @@ import React from 'react';
 import { Loader } from '../Loader';
 import { Todo } from '../../types/Todo';
 import { User } from '../../types/User';
+import cn from 'classnames';
 
 interface Props {
   todo: Todo;
@@ -42,7 +43,12 @@ export const TodoModal: React.FC<Props> = ({
           </header>
 
           <div className="modal-card-body">
-            <p className="block" data-cy="modal-title">
+            <p
+              className={cn({
+                'has-text-success': todo.completed,
+                'has-text-danger': !todo.completed,
+              })}
+            >
               {todo.title}
             </p>
 
